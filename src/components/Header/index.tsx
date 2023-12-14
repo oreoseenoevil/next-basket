@@ -37,13 +37,13 @@ const Header: FC<HeaderProps> = ({ searchValue, setSearchValue }) => {
             {wishlist.length > 0 && (
               <span className={`${styles.header_basketCount} animate__bounceIn`}>{wishlist.length}</span>
             )}
-            <img src={heart} alt="wishlist" />
+            Wishlist <img src={heart} alt="wishlist" />
           </Link>
         )}
         {pathname !== '/basket' && (
           <Link className={styles.header_basket} to="/basket">
             {totalItems > 0 && <span className={`${styles.header_basketCount} animate__bounceIn`}>{totalItems}</span>}
-            <BsCart4 />
+            Basket <BsCart4 />
           </Link>
         )}
         {pathname === '/basket' && (
