@@ -23,7 +23,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn' # Cache Yarn dependencies
       - run: yarn install # Use Yarn for dependency installation
-      - run: yarn build --if-present # Use Yarn for building
+      - run: yarn build # Use Yarn for building
       - run: yarn test # Use Yarn for running tests
       - name: Deploy with gh-pages
         run: |
