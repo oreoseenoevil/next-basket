@@ -2,6 +2,7 @@ import { forwardRef, HTMLAttributes, useMemo, useState } from 'react';
 import styles from './ProductCard.module.scss';
 import { formatCurrency } from '../../utils';
 import heart from '../../assets/heart.svg';
+import close from '../../assets/close.svg';
 
 import 'react-multi-carousel/lib/styles.css';
 
@@ -16,11 +17,24 @@ interface ProductCardProps extends HTMLAttributes<HTMLDivElement> {
   stock?: number;
   addToBasket?: () => void;
   addToWishlist?: () => void;
+  onRemove?: () => void;
 }
 
 const ProductCard = forwardRef<HTMLDivElement, ProductCardProps>(
   (
-    { title, src, brand, className, price, discountPercentage = 0, rating = 0, stock = 0, addToBasket, addToWishlist },
+    {
+      title,
+      src,
+      brand,
+      className,
+      price,
+      discountPercentage = 0,
+      rating = 0,
+      stock = 0,
+      addToBasket,
+      addToWishlist,
+      onRemove
+    },
     ref
   ) => {
     const [onHover, setOnHover] = useState<boolean>(false);
@@ -73,6 +87,11 @@ const ProductCard = forwardRef<HTMLDivElement, ProductCardProps>(
         onMouseOver={() => setOnHover(true)}
         onMouseLeave={() => setOnHover(false)}
       >
+        {onHover && onRemove && (
+          <button className={styles.product_remove} onClick={onRemove}>
+            <img src={close} alt="Close" />
+          </button>
+        )}
         <div className={styles.card_image}>
           {onHover && stock <= 0 && (
             <div className={styles.oos}>
@@ -80,7 +99,7 @@ const ProductCard = forwardRef<HTMLDivElement, ProductCardProps>(
             </div>
           )}
           <img src={src} alt={title} className={`${onHover && stock <= 0 && styles.opacity}`} />
-          {onHover && (
+          {onHover && addToWishlist && (
             <button className={styles.card_wishlist} onClick={addToWishlist}>
               <img src={heart} alt="wishlist" />
             </button>

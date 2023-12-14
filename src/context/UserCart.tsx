@@ -15,6 +15,7 @@ interface UserCartContextType {
   handleReset: () => void;
   wishlist: Product[];
   addToWishlist: (value: Product) => void;
+  removeFromWishlist: (value: Product) => void;
 }
 
 export const UserCartContext = createContext<UserCartContextType>({
@@ -26,7 +27,8 @@ export const UserCartContext = createContext<UserCartContextType>({
   handleReset: () => {},
   totalItems: 0,
   wishlist: [],
-  addToWishlist: () => {}
+  addToWishlist: () => {},
+  removeFromWishlist: () => {}
 });
 
 type ChangeQuantityPayload = { id: number; quantity: number };
@@ -86,6 +88,10 @@ const UserCartContextProvider = ({ children }: UserCartContextProviderProps) => 
     }
   };
 
+  const removeFromWishlist = (product: Product) => {
+    setWishlist((prev) => prev.filter((item) => item.id !== product.id));
+  };
+
   const total = useMemo(() => {
     return cart.reduce(
       (acc, item) => acc + (item.price - item.price * (item.discountPercentage / 100)) * item.quantity!,
@@ -123,7 +129,8 @@ const UserCartContextProvider = ({ children }: UserCartContextProviderProps) => 
         totalItems: cart.reduce((total, item: CartItem) => total + (item.quantity ?? 0), 0) as number,
         handleReset,
         wishlist,
-        addToWishlist
+        addToWishlist,
+        removeFromWishlist
       }}
     >
       {children}

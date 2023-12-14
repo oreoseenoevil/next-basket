@@ -34,7 +34,7 @@ const Header: FC<HeaderProps> = ({ searchValue, setSearchValue }) => {
       <div className={styles.header_right}>
         {pathname !== '/wishlist' && (
           <Link className={styles.header_wishlist} to="/wishlist">
-            {totalItems > 0 && (
+            {wishlist.length > 0 && (
               <span className={`${styles.header_basketCount} animate__bounceIn`}>{wishlist.length}</span>
             )}
             <img src={heart} alt="wishlist" />

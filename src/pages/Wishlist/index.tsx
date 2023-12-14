@@ -15,7 +15,7 @@ type NotificationState = {
 } | null;
 
 function Wishlist() {
-  const { addToCart, wishlist } = useUserCart();
+  const { addToCart, wishlist, removeFromWishlist } = useUserCart();
   const [notification, setNotification] = useState<NotificationState>(null);
 
   return (
@@ -70,6 +70,16 @@ function Wishlist() {
                 }, 5000);
               }}
               className="animate__animated animate__fadeIn"
+              onRemove={() => {
+                removeFromWishlist(item);
+                setNotification({
+                  message: 'Successfully remove to basket',
+                  item
+                });
+                setTimeout(() => {
+                  setNotification(null);
+                }, 5000);
+              }}
             />
           ))}
         </div>
