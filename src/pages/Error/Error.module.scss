@@ -1,0 +1,38 @@
+.notfound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+
+  &_content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+
+    h1 {
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 3rem;
+    }
+
+    a {
+      font-weight: 500;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 4px;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}

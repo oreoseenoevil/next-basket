@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  font-family: 'Rubik', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --black: #000;
+  --white: #fff;
+
+  --grey-0: #ffffff;
+  --grey-5: #f6f5f7;
+  --grey-6: #efefef;
+  --grey-7: #f3f0f5;
+  --grey-10: #f0ebf2;
+  --grey-20: #e0d8e5;
+  --grey-30: #c6bacc;
+  --grey-40: #aa9ab2;
+  --grey-50: #918299;
+  --grey-60: #786980;
+  --grey-70: #5f5166;
+  --grey-80: #463a4d;
+  --grey-90: #2e2533;
+  --grey-95: #201923;
+  --grey-100: #17121a;
+
+  --teal-0: #00998c;
+  --teal-10: #00a299;
+  --teal-20: #00a29933;
+  --teal-50: #00a29980;
+
+  --slide-toggle-thumb-color: var(--white);
+  --slide-toggle-track-color: var(--grey-50);
+  --slide-toggle-ripple-color: var(--grey-100);
+  --slide-toggle-track-active-color: var(--teal-0);
+  --slide-toggle-focus-ripple-color: var(--teal-10);
+  --slide-toggle-thumb-active-color: var(--teal-0);
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+}
+
+#root {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
