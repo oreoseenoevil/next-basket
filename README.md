@@ -1,30 +1,51 @@
-# React + TypeScript + Vite
+# NEXT BASKET E-Commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+NEXT BASKET is an e-commerce platform that allows users to create and configure web stores. This README provides instructions and information about the development of an e-commerce application with product, wishlist, and basket pages. The goal is to build a website using React, Typescript, and NextJS that connects to a RESTful API for handling product-related functionalities.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Expanding the ESLint configuration
+- [NEXT BASKET E-Commerce Platform](#next-basket-e-commerce-platform)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+    - [1. Product Page](#1-product-page)
+    - [2. Wishlist Page](#2-wishlist-page)
+    - [3. Basket Page](#3-basket-page)
+  - [Getting Started](#getting-started)
+  - [Languages \& Libraries](#languages--libraries)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+### 1. Product Page
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Display a list of products with relevant details.
+- Clicking on a product should navigate to a detailed product page.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 2. Wishlist Page
+
+- Allow users to view and manage their wishlist.
+- Add and remove products from the wishlist.
+
+### 3. Basket Page
+
+- Implement a basket page where users can view and manage their selected items.
+- Provide functionality to add, remove, and update quantities of items in the basket.
+
+## Getting Started
+
+To get started with the development of the NEXT BASKET project, follow these steps:
+
+1. Clone the repository.
+2. Install dependencies using `npm install`.
+3. Run the development server with `npm run dev`.
+4. Open the project in your preferred code editor.
+
+## Languages & Libraries
+
+- [React](https://reactjs.org/)
+
+- [Vite.js](https://vitejs.dev/)
+
+- [Typescript](https://www.typescriptlang.org/)
