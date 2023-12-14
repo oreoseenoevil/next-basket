@@ -5,6 +5,26 @@
   column-gap: 2rem;
   row-gap: 5rem;
   padding: 1rem;
+  position: relative;
+
+  &_empty {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .empty {
+    &_message {
+      font-size: 2rem;
+    }
+  }
 }
 
 .notification {

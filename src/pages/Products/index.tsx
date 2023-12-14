@@ -16,11 +16,12 @@ type NotificationState = {
 } | null;
 
 function Products() {
-  const { products, isLoading } = useProducts();
+  const { products, isLoading, searchValue } = useProducts();
   const { addToCart, addToWishlist } = useUserCart();
   const [notification, setNotification] = useState<NotificationState>(null);
 
-  const loaded = !isLoading && products.length >= 0;
+  const loaded = !isLoading && products.length > 0;
+  const noProduct = !isLoading && products.length === 0;
 
   return (
     <div className={styles.products}>
@@ -102,6 +103,13 @@ function Products() {
             className="animate__animated animate__fadeIn"
           />
         ))}
+      {noProduct && (
+        <div className={styles.products_empty}>
+          <div className={styles.empty_message}>
+            It seems like we don't have '{searchValue}' product that you're looking for.
+          </div>
+        </div>
+      )}
     </div>
   );
 }

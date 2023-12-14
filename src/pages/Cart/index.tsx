@@ -9,17 +9,7 @@ const Cart = () => {
   return (
     <div className={styles.cart}>
       <div className={styles.cart_content}>
-        {cart.length <= 0 && (
-          <div className={styles.cart_empty}>
-            <div className={styles.empty_message}>
-              Continue shopping to enjoy the best discounts applied automatically to your items!
-            </div>
-            <Link className={styles.empty_button} to="/">
-              Continue Shopping
-            </Link>
-          </div>
-        )}
-        {cart.length > 0 &&
+        {cart.length > 0 ? (
           cart.map((item) => (
             <div className={styles.cart_row} key={item.id}>
               <div className={styles.item_left}>
@@ -47,7 +37,17 @@ const Cart = () => {
                 </span>
               </div>
             </div>
-          ))}
+          ))
+        ) : (
+          <div className={styles.cart_empty}>
+            <div className={styles.empty_message}>
+              Continue shopping to enjoy the best discounts applied automatically to your items!
+            </div>
+            <Link className={styles.empty_button} to="/">
+              Continue Shopping
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
