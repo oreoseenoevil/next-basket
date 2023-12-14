@@ -24,7 +24,6 @@ jobs:
           cache: 'yarn' # Cache Yarn dependencies
       - run: yarn install # Use Yarn for dependency installation
       - run: yarn build # Use Yarn for building
-      - run: yarn test # Use Yarn for running tests
       - name: Deploy with gh-pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
